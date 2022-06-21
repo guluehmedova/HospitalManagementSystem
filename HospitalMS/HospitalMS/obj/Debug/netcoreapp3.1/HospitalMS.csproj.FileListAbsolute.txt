@@ -148,4 +148,15 @@ C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\bin\Debug\n
 C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Dashboard\Index.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\_ViewImports.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\_ViewStart.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\DoctorArea\Index.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\DoctorArea\Add.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\DoctorArea\Update.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Login.cshtml.g.cs

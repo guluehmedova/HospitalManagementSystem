@@ -1,4 +1,5 @@
 using HospitalMS.Models;
+using HospitalMS.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -38,6 +39,7 @@ namespace HospitalMS
                 opt.Password.RequireUppercase = true;
                 opt.Password.RequireLowercase = true;
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<DataContext>();
+            services.AddScoped<IEmailService, EmailService>();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -46,7 +48,13 @@ namespace HospitalMS
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -54,7 +62,13 @@ namespace HospitalMS
                 //{
                 //    await context.Response.WriteAsync("Hello World!");
                 //});
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "MyArea",
+                    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Doctor}/{action=Index}/{id?}");
             });
         }
     }

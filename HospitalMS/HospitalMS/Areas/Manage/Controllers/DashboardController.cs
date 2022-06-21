@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalMS.Areas.Manage.Controllers
 {
+    [Area("manage")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public class DashboardController : Controller
     {
-        [Area("manage")]
-        [Route("[controller]/[action]")]
         public IActionResult Index()
         {
             return View();

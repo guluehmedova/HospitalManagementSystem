@@ -1,20 +1,29 @@
-﻿ <!-- Main Start -->
-    <main>
+﻿@model PagenatedList<Doctor> 
+
+@{
+    int count = (Model.PageIndex - 1) * ViewBag.PageSize + 1;
+}
+
+ <!-- Main Start -->
       <section id="CardsSection" class="my-5">
         <div class="container">
           <div class="row">
+           @foreach (var item in Model)
+            {
             <div class="col-lg-4 col-md-6 mb-2">
               <div class="card">
                 <img
-                  src="~/assets/images/doc1.webp"
+                  src="~/uploads/doctors/@item.Image"
                   class="card-img-top img-fluid"
                   alt="..."
                 />
                 <div class="card-body">
-                  <h5 class="card-title">Anna Jones</h5>
+                  <h5 class="card-title">@(item.Name + " " + item.Surname)</h5>
                   <p class="card-text my-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                Profession:   @item.Profession
+                  </p>
+                   <p class="card-text my-3">
+                  Experience: @item.Experience
                   </p>
                   <div
                     class="card-body d-flex align-items-center justify-content-between"
@@ -27,6 +36,9 @@
                     >
                     <a
                       class="cutomerscount"
+                      asp-controller="doctor"
+                      asp-action="apply"
+                      id="applyBtn"
                       style="
                         color: #1596aa;
                         font-weight: 800;
@@ -39,89 +51,52 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-              <div class="card">
-                <img
-                  src="~/assets/images/doc1.webp"
-                  class="card-img-top img-fluid"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Anna Jones</h5>
-                  <p class="card-text my-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <div
-                    class="card-body d-flex align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="btn btn-info my-3 w-50"
-                      style="font-size: 15px"
-                      >Apply for a doctor's appointment</a
-                    >
-                    <a
-                      class="cutomerscount"
-                      style="
-                        color: #1596aa;
-                        font-weight: 800;
-                        cursor: pointer;
-                        text-decoration: none;
-                      "
-                      ><span>Customers :</span> <span>10</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-              <div class="card">
-                <img
-                  src="~/assets/images/doc1.webp"
-                  class="card-img-top img-fluid"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">Anna Jones</h5>
-                  <p class="card-text my-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <div
-                    class="card-body d-flex align-items-center justify-content-between"
-                  >
-                    <a
-                      href="#"
-                      class="btn btn-info my-3 w-50"
-                      style="font-size: 15px"
-                      >Apply for a doctor's appointment</a
-                    >
-                    <a
-                      class="cutomerscount"
-                      style="
-                        color: #1596aa;
-                        font-weight: 800;
-                        cursor: pointer;
-                        text-decoration: none;
-                      "
-                      ><span>Customers :</span> <span>10</span></a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+                
+            }
           </div>
         </div>
       </section>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 my-5">
-            <div class="load-btn text-center">
-              <a style="color: white; background-color: #1596AA; font-weight: 900; padding: 1rem; text-decoration: none; font-size: 15px;" href="#">Load More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+      <div class="col-lg-12 d-flex justify-content-center mt-4">
+                    <nav aria-label="Page navigation example" class="d-flex justify-content-center align-items-center">
+                        <ul class="pagination">
+                            @if (Model.HasPrev)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" asp-action="index" asp-route-page="@(Model.PageIndex - 1)" asp-route-select="@ViewBag.select" asp-route-word="@ViewBag.word" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            }
+                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            {
+                                if (Model.PageIndex - 1 == i)
+                                {
+                                    <li class="page-item"><a class="page-link" asp-action="index" asp-route-page="@i" asp-route-select="@ViewBag.select" asp-route-word="@ViewBag.word">@i</a></li>
+                                }
+
+                                if (Model.PageIndex == i)
+                                {
+                                    <li class="page-item active"><a class="page-link" style="z-index: 3; color: white; background-color: #022c57 !important; border-color: #022c57 !important; " asp-action="index" asp-route-page="@i" asp-route-select="@ViewBag.select" asp-route-word="@ViewBag.word">@i</a></li>
+                                }
+                                if (Model.PageIndex + 1 == i)
+                                {
+                                    <li class="page-item"><a class="page-link" asp-action="index" asp-route-page="@i" asp-route-select="@ViewBag.select" asp-route-word="@ViewBag.word">@i</a></li>
+                                }
+                            }
+                            @if (Model.HasNext)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" asp-action="index" asp-route-page="@(Model.PageIndex + 1)" asp-route-select="@ViewBag.select" asp-route-word="@ViewBag.word" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
     <!-- Main End -->
+
+
+  @section Scripts{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+}

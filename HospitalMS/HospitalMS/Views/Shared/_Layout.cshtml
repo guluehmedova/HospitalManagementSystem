@@ -48,7 +48,9 @@
     </nav>
     <!-- Header End -->
 
-   @RenderBody()
+    <main>
+     @RenderBody()
+    </main>
 
 
     <!-- Footer Start -->
@@ -94,5 +96,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="~/assets/js/main.js"></script>
+    @RenderSection("scripts",required:false)
   </body>
 </html>

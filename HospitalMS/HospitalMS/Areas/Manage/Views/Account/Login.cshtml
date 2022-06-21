@@ -1,0 +1,34 @@
+﻿@model AdminLoginViewModel
+
+
+<!-- Sign In Start -->
+<div class="container-fluid">
+    <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+            <form method="post" asp-action="login" asp-controller="account">
+                <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                    <div class="form-floating mb-3">
+                        <input asp-for="UserName" class="form-control" id="floatingInput"  />
+                        <label asp-for="UserName">UserName</label>
+                        <span class="text-danger" asp-validation-for="UserName"></span>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input asp-for="Password" class="form-control" id="floatingPassword"   placeholder="Password">
+                        <label asp-for="Password">Password</label>
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Login</button>
+                </div>
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Sign In End -->
+
+
+
+@section Scripts
+{
+    @await Html.PartialAsync("_ValidationScriptsPartial.cshtml")
+}
