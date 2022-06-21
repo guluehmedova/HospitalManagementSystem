@@ -28,20 +28,20 @@ using HospitalMS.Models;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\Areas\Manage\Views\_ViewImports.cshtml"
-using HospitalMS.Areas.ViewModels;
+using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 4 "C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\Areas\Manage\Views\_ViewImports.cshtml"
-using Microsoft.AspNetCore.Identity;
+using HospitalMS.Areas.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a4d7f7d0b17ebe16d33982f4f866c4a1cfce73ef", @"/Areas/Manage/Views/Account/Login.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5837ac5a20a090362b0d0f8f41edf5b3ab460447", @"/Areas/Manage/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e970a3414179ca7e4584e72d18dac7abc547ee9a", @"/Areas/Manage/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Areas_Manage_Views_Account_Login : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<AdminLoginViewModel>
     #nullable disable

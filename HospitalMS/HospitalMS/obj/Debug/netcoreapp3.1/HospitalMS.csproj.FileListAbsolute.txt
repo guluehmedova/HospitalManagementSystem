@@ -160,3 +160,6 @@ C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\n
 C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\DoctorArea\Update.cshtml.g.cs
 C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Login.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs

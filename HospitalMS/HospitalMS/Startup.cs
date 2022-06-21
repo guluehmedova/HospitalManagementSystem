@@ -40,6 +40,7 @@ namespace HospitalMS
                 opt.Password.RequireLowercase = true;
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<DataContext>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddHttpContextAccessor();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

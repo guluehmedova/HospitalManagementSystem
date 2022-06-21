@@ -1,0 +1,38 @@
+﻿@model MemberLoginViewModel
+
+    <!-- Main Start -->
+      <div class="form_wrapper">
+        <div class="form_container d-flex flex-column align-items-center">
+          <div class="title_container">
+            <h2>User Login Form</h2>
+          </div>
+          <div class="row clearfix">
+            <div class="">
+              <form asp-action="login" method="post">
+                <div class="input_field">
+                  <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input
+                    placeholder="Username"
+                    asp-for="UserName"
+                  />
+                 <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="input_field">
+                  <span><i aria-hidden="true" class="fa fa-lock"></i></span>
+                  <input
+                    type="password"
+                    asp-for="Password"
+                    placeholder="Password"
+                  />
+                  <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <input class="button" type="submit" value="Login" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+    <!-- Main End -->
+
+  

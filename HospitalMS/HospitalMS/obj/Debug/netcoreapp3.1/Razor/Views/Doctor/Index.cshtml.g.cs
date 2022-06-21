@@ -26,8 +26,15 @@ using HospitalMS.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\Views\_ViewImports.cshtml"
+using HospitalMS.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5cde29ba04856cbcdf6fc67f935c83fd39892bfc", @"/Views/Doctor/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"72ed9c563f3e8868f66af9ec9e8a59e8c71c4b79", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f64fe9899ad51afadbcb32136b0c3a88f28d3dde", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Doctor_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<PagenatedList<Doctor>>
     #nullable disable
@@ -88,7 +95,7 @@ using HospitalMS.Models;
 #line hidden
 #nullable disable
             WriteLiteral("            <div class=\"col-lg-4 col-md-6 mb-2\">\r\n              <div class=\"card\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc8473", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc8678", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -148,7 +155,7 @@ AddHtmlAttributeValue("", 438, item.Image, 438, 11, false);
                       >Apply for a doctor's appointment</a
                     >
                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc11654", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc11859", async() => {
                 WriteLiteral("<span>Customers :</span> <span>10</span>");
             }
             );
@@ -193,7 +200,7 @@ AddHtmlAttributeValue("", 438, item.Image, 438, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("                                <li class=\"page-item\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc14318", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc14523", async() => {
                 WriteLiteral("\r\n                                        <span aria-hidden=\"true\">&laquo;</span>\r\n                                    ");
             }
             );
@@ -266,7 +273,7 @@ AddHtmlAttributeValue("", 438, item.Image, 438, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("                                    <li class=\"page-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc19201", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc19406", async() => {
 #nullable restore
 #line 74 "C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\Views\Doctor\Index.cshtml"
                                                                                                                                                                                    Write(i);
@@ -337,7 +344,7 @@ AddHtmlAttributeValue("", 438, item.Image, 438, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("                                    <li class=\"page-item active\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc23906", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc24111", async() => {
 #nullable restore
 #line 79 "C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\Views\Doctor\Index.cshtml"
                                                                                                                                                                                                                                                                                                      Write(i);
@@ -408,7 +415,7 @@ AddHtmlAttributeValue("", 438, item.Image, 438, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("                                    <li class=\"page-item\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc29146", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc29351", async() => {
 #nullable restore
 #line 83 "C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\Views\Doctor\Index.cshtml"
                                                                                                                                                                                    Write(i);
@@ -485,7 +492,7 @@ AddHtmlAttributeValue("", 438, item.Image, 438, 11, false);
 #line hidden
 #nullable disable
             WriteLiteral("                                <li class=\"page-item\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc34071", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cde29ba04856cbcdf6fc67f935c83fd39892bfc34276", async() => {
                 WriteLiteral("\r\n                                        <span aria-hidden=\"true\">&raquo;</span>\r\n                                    ");
             }
             );
