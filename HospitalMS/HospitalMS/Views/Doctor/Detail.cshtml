@@ -5,7 +5,7 @@
           <div class="row d-flex flex-column align-items-center">
             <div class="col-lg-4 col-md-6 mb-2">
               <div class="card">
-               <a>
+               <a  asp-route-DoctorId="@Model.Doctor.Id">
                     <img
                   src="~/uploads/doctors/@Model.Doctor.Image"
                   class="card-img-top img-fluid"
@@ -23,9 +23,8 @@
                   <div
                     class="card-body d-flex align-items-center justify-content-between"
                   >
-                   <input type="hidden" name="doctorId" value="@Model.Doctor.Id" />
+                   <input type="hidden"  />
                    @await Html.PartialAsync("_DoctorAppointmentPartialView", Model.DoctorAppointment)
-                   <span>Customers :</span> <span>@Model.DoctorAppointments.Where(x=>x.Status==true).Count()</span>
                   </div>
                 </div>
               </div>

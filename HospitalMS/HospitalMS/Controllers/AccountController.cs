@@ -106,5 +106,10 @@ namespace HospitalMS.Controllers
 
             return RedirectToAction("index", "doctor");
         }
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("login", "account");
+        }
     }
 }

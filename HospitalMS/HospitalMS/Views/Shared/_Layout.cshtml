@@ -27,7 +27,7 @@
   <body>
     <!-- Header Start -->
     <nav class="navbar">
-      <a class="logo">
+      <a asp-action="index" asp-controller="doctor" class="logo">
         <i class="fa-solid fa-stethoscope"></i>
       </a>
       <div class="push-left">
@@ -43,6 +43,7 @@
             <a class="nav__link" asp-action="register" asp-controller="account">Register</a>
           </li>
           <li class="menu-item"><a class="nav__link" asp-action="login" asp-controller="account">Login</a></li>
+          <li class="menu-item"><a class="nav__link" asp-action="logout" asp-controller="account">Logout</a></li>
         </ul>
       </div>
     </nav>

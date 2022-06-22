@@ -24,8 +24,15 @@
                   <div
                     class="card-body d-flex align-items-center justify-content-between"
                   >
-                  <a asp-action="detail" asp-controller="doctor" asp-route-Id="@item.Id"  style="text-decoration: none; color:#1596aa">Click For Rendezvous</a>
-                   <span>Customers :</span> <span>@item.DoctorAppointments.Where(x=>x.Status==true).Count()</span>
+                  @if (!User.Identity.IsAuthenticated)
+                  {
+                    <a asp-action="login" style="text-decoration: none; font-size: 12px; color:#1596aa" asp-controller="account">Login and get a rendezvous </a>
+                  }
+                  @if (User.Identity.IsAuthenticated)
+                  {
+              <a asp-action="detail" asp-controller="doctor" asp-route-Id="@item.Id" style="text-decoration: none; color:#1596aa; font-size:12px">Click For Rendezvous</a>
+                  }
+                   <span>Customers:@item.DoctorAppointments.Where(x=>x.Status==true).Count()</span>
                   </div>
                 </div>
               </div>

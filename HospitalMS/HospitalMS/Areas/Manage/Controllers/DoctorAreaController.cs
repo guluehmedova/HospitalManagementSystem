@@ -32,7 +32,7 @@ namespace HospitalMS.Areas.Manage.Controllers
 
             ViewBag.SelectedPage = page;
 
-            return View(PagenatedList<Doctor>.Create(productquery, page, 10));
+            return View(PagenatedList<Doctor>.Create(productquery, page, 4));
         }
         public IActionResult Add() { return View(); }
         [HttpPost]
