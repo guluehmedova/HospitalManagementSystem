@@ -13,7 +13,6 @@ namespace HospitalMS.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly DataContext _context;
         private readonly SignInManager<AppUser> _signInManager;
-
         public AccountController(UserManager<AppUser> userManager, DataContext context, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
@@ -26,6 +25,11 @@ namespace HospitalMS.Controllers
         }
         public IActionResult Register()
         {
+            if (User.IsInRole("Member"))
+            {
+                return RedirectToAction("index", "doctor");
+            }
+
             return View();
         }
         [HttpPost]
@@ -71,7 +75,14 @@ namespace HospitalMS.Controllers
 
             return RedirectToAction("index", "doctor");
         }
-        public IActionResult Login() { return View(); }
+        public IActionResult Login()
+        {
+            if (User.IsInRole("Member"))
+            {
+                return RedirectToAction("index", "doctor");
+            }
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(MemberLoginViewModel memberVM)

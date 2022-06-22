@@ -17,9 +17,11 @@
       <th scope="col">Age</th>
       <th scope="col">Profession</th>
       <th scope="col">Experience</th>
+      <th scope="col">Appointments Count</th>
+      <th scope="col">Accepted Appointments</th>
       <th scope="col">Actions</th>
       <th scope="col">
-        <a style="color:black; text-decoration: none" asp-action="add">Add <i class="fa-solid fa-plus"></i></a>
+        <a style="color:black; text-decoration: none" asp-action="add" asp-controller="doctorarea">Add <i class="fa-solid fa-plus fa-beat"></i></a>
       </th>
     </tr>
   </thead>
@@ -37,9 +39,16 @@
         <td>@item.Age</td>
         <td>@item.Profession</td>
         <td>@item.Experience</td>
+        <td>
+            <a class="btn btn-outline-dark fa-flip" asp-action="Appointments" asp-route-doctorId="@item.Id">
+             @item.DoctorAppointments.Where(x=>!x.Status).Count()</a>
+        </td>
+        <td>
+            @item.DoctorAppointments.Where(x=>x.Status==true).Count()
+        </td>
         <td class="d-flex flex-column align-items-center">
-            <a style="color:black; text-decoration: none" class="btn btn-outline-warning" asp-action="update" asp-route-id="@item.Id">Update <i class="fa-solid fa-pen-to-square"></i></a>
-            <a style="color:black; text-decoration: none" class="btn btn-outline-danger delete-btn" asp-action="delete" asp-route-id="@item.Id">Delete <i class="fa-solid fa-trash"></i></a>
+            <a style="color:black; text-decoration: none" class="btn btn-outline-warning" asp-action="update" asp-route-Id="@item.Id">Update <i class="fa-solid fa-pen-to-square fa-beat-fade"></i></a>
+            <a style="color:black; text-decoration: none" class="btn btn-outline-danger  delete-btn" asp-action="delete" asp-route-Id="@item.Id">Delete <i class="fa-solid fa-trash fa-shake"></i></a>
         </td>
     </tr>
   }

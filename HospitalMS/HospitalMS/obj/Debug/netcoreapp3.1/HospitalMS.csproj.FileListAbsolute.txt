@@ -163,3 +163,7 @@ C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\n
 C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_DoctorAppointmentPartialView.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\DoctorArea\InfoAppointment.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\DoctorArea\Appointments.cshtml.g.cs
+C:\Users\ASUS\Desktop\HospitalManagementSystem\HospitalMS\HospitalMS\obj\Debug\netcoreapp3.1\Razor\Views\Doctor\Detail.cshtml.g.cs

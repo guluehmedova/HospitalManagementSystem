@@ -12,5 +12,6 @@ namespace HospitalMS.Models
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<UserDoctor>  UserDoctors { get; set; }
+        public DbSet<DoctorAppointment> DoctorAppointments { get; set; }
     }
 }

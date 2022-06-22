@@ -1,7 +1,10 @@
 ﻿using HospitalMS.Helper;
 using HospitalMS.Models;
+using HospitalMS.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace HospitalMS.Areas.Manage.Controllers
@@ -11,14 +14,17 @@ namespace HospitalMS.Areas.Manage.Controllers
     {
         private readonly DataContext _context;
         private readonly IWebHostEnvironment _web;
-        public DoctorAreaController(DataContext context, IWebHostEnvironment web)
+        private readonly IEmailService _emailService;
+
+        public DoctorAreaController(DataContext context, IWebHostEnvironment web,IEmailService emailService)
         {
             _context = context;
             _web = web;
+            _emailService = emailService;
         }
         public IActionResult Index(int page = 1, bool? selected = null, string? word = null)
         {
-            IQueryable<Doctor> productquery = _context.Doctors.Where(x => x.IsDeleted == false).AsQueryable();
+            IQueryable<Doctor> productquery = _context.Doctors.Include(x=>x.DoctorAppointments).Where(x => x.IsDeleted == false).AsQueryable();
 
             if (selected == false) { productquery = productquery.Where(x => x.IsDeleted == false); }
             if (selected == true) { productquery = productquery.Where(x => x.IsDeleted == true); }
@@ -107,9 +113,9 @@ namespace HospitalMS.Areas.Manage.Controllers
 
             return RedirectToAction("index", "doctorarea");
         }
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int Id)
         {
-            Doctor doctor = _context.Doctors.FirstOrDefault(x => x.Id == id && x.IsDeleted == false);
+            Doctor doctor = _context.Doctors.FirstOrDefault(x => x.Id == Id && x.IsDeleted == false);
 
             if (doctor == null) { return NotFound();}
 
@@ -117,6 +123,55 @@ namespace HospitalMS.Areas.Manage.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("index", "doctorarea");
+        }
+        public IActionResult Appointments(int doctorId)
+        {
+            List<DoctorAppointment> appointments = _context.DoctorAppointments.Include(x => x.Doctor).Where(x => x.DoctorId == doctorId).ToList();
+            return View(appointments);
+        }
+        public IActionResult InfoAppointment(int id)
+        {
+            DoctorAppointment appointment = _context.DoctorAppointments.Include(x => x.Doctor).FirstOrDefault(x => x.Id == id);
+
+            if (appointment == null) return NotFound();
+
+            return View(appointment);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AcceptAppointment(int id)
+        {
+            DoctorAppointment appointment = _context.DoctorAppointments.FirstOrDefault(x => x.Id == id);
+
+            if (appointment == null) return NotFound();
+
+            AppUser appUser = _context.AppUsers.FirstOrDefault(x => x.Id == appointment.AppUserId);
+
+            if (appUser == null) return NotFound();
+            appointment.Status = true;
+
+            _context.SaveChanges();
+
+            _emailService.Send(appUser.Email, "Your Appointment Accepted", "Thanks");
+
+            return RedirectToAction("index");
+        }
+        public IActionResult DeleteAppointment(int id)
+        {
+            DoctorAppointment appointment = _context.DoctorAppointments.FirstOrDefault(x => x.Id == id);
+
+            AppUser appUser = _context.AppUsers.FirstOrDefault(x => x.Id == appointment.AppUserId);
+            if (appUser == null) return NotFound();
+
+            if (appointment == null) return NotFound();
+
+            _context.DoctorAppointments.Remove(appointment);
+
+            _context.SaveChanges();
+
+            _emailService.Send(appUser.Email, "Your Appointment Didn't Accepted. Choose Another Date", "Thanks");
+
+            return Ok();
         }
     }
 }

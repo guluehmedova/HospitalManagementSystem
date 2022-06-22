@@ -21,6 +21,6 @@ namespace HospitalMS.Models
         public string Image { get; set; }
         [NotMapped]
         public IFormFile CardImage { get; set; }
-        public List<UserDoctor> UserDoctors { get; set; }
+        public List<DoctorAppointment> DoctorAppointments { get; set; }
     }
 }

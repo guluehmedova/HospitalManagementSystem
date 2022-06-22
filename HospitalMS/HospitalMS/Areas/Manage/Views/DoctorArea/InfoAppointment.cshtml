@@ -1,0 +1,28 @@
+﻿@model DoctorAppointment
+
+<h1 class="text-center mt-4">Information about Comment</h1>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto d-flex justify-content-center">
+            <div class="card" style="background-color: #cff4fc; width:100%;">
+                <div class="card-body">
+                    <h5 class="card-title">FullName: @Model.FullName</h5>
+                    <h5 class="card-title">Email: @Model.Email</h5>
+                    <h5 class="card-title">Doctor name: @Model.Doctor.Name</h5>
+                    <h5 class="card-title">Date: @Model.Date</h5>
+                    <h5 class="card-title">Time: @Model.Time</h5>
+                    <h5 class="card-title">Status: <span style="color:green" class="badge badge-@(Model.Status?"success":"info")">@(Model.Status?"Confirmed":"Waiting")</span></h5>
+                    @if (!Model.Status)
+                    {
+                        <form method="post" asp-action="AcceptAppointment" class="d-inline-block">
+                            <input name="Id" value="@Model.Id" type="hidden" />
+                            <button type="submit" class="btn btn-success">Accept</button>
+                        </form>
+                    }
+                    <a asp-action="index" class="btn btn-info">Go to back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

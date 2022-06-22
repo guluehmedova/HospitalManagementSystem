@@ -1,4 +1,4 @@
-﻿using HospitalMS.Areas.ViewModels;
+﻿using HospitalMS.Areas.Manage.ViewModels;
 using HospitalMS.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

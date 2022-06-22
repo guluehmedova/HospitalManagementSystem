@@ -62,6 +62,54 @@ namespace HospitalMS.Migrations
                     b.ToTable("Doctors");
                 });
 
+            modelBuilder.Entity("HospitalMS.Models.DoctorAppointment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AppUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("FullName")
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.HasIndex("DoctorId");
+
+                    b.ToTable("DoctorAppointments");
+                });
+
             modelBuilder.Entity("HospitalMS.Models.UserDoctor", b =>
                 {
                     b.Property<int>("Id")
@@ -311,14 +359,27 @@ namespace HospitalMS.Migrations
                     b.HasDiscriminator().HasValue("AppUser");
                 });
 
+            modelBuilder.Entity("HospitalMS.Models.DoctorAppointment", b =>
+                {
+                    b.HasOne("HospitalMS.Models.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
+                    b.HasOne("HospitalMS.Models.Doctor", "Doctor")
+                        .WithMany("DoctorAppointments")
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("HospitalMS.Models.UserDoctor", b =>
                 {
                     b.HasOne("HospitalMS.Models.AppUser", "AppUser")
-                        .WithMany("UserDoctors")
+                        .WithMany()
                         .HasForeignKey("AppUserId1");
 
                     b.HasOne("HospitalMS.Models.Doctor", "Doctor")
-                        .WithMany("UserDoctors")
+                        .WithMany()
                         .HasForeignKey("DoctorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
